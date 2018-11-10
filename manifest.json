@@ -1,5 +1,25 @@
 {
-  "manifest_version": 2,
-  "name": “Hack Princeton“,
-  "version": "0.1"
+  "name": "Deadlines",
+  "version": "1.0",
+  "description": "Gather deadlines from a page, insert into calendar",
+  "permissions": [
+    "storage"
+  ],
+  "background": {
+    "scripts": [
+      "popup.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "contents.js"
+      ]
+    }
+  ],
+  "manifest_version": 2
 }
